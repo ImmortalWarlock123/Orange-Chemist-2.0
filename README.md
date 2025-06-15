@@ -19,53 +19,60 @@
             color: #333;
             background: #f8fafc;
             overflow-x: hidden;
+            width: 100%;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+            width: 100%;
         }
 
-        /* Mobile-First Header */
+        /* Mobile-First Header - Fixed */
         .header {
             background: white;
             color: #333;
-            padding: 12px 0;
+            padding: 10px 0;
             position: sticky;
             top: 0;
             z-index: 100;
             box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            width: 100%;
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
         }
 
-        /* Mobile-optimized Logo */
+        /* Mobile-optimized Logo - Fixed sizing */
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            flex: 1;
+            min-width: 0; /* Allows flex item to shrink */
         }
 
         .cross-container {
             position: relative;
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             background: #00A859;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 15px rgba(0, 168, 89, 0.25);
+            flex-shrink: 0;
         }
 
         .medical-cross {
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             position: relative;
         }
 
@@ -78,16 +85,16 @@
         }
 
         .medical-cross::before {
-            width: 5px;
-            height: 24px;
+            width: 4px;
+            height: 20px;
             left: 50%;
             top: 0;
             transform: translateX(-50%);
         }
 
         .medical-cross::after {
-            width: 24px;
-            height: 5px;
+            width: 20px;
+            height: 4px;
             top: 50%;
             left: 0;
             transform: translateY(-50%);
@@ -95,17 +102,17 @@
 
         .orange-accent {
             position: absolute;
-            top: -4px;
-            right: -4px;
-            width: 16px;
-            height: 16px;
+            top: -3px;
+            right: -3px;
+            width: 14px;
+            height: 14px;
             background: #F56A0A;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 9px;
+            font-size: 8px;
             color: white;
             box-shadow: 0 2px 8px rgba(245, 106, 10, 0.3);
             border: 2px solid white;
@@ -113,21 +120,30 @@
 
         .leaf-element {
             position: absolute;
-            top: -3px;
-            right: 6px;
-            width: 5px;
-            height: 8px;
+            top: -2px;
+            right: 5px;
+            width: 4px;
+            height: 6px;
             background: #1BA94C;
             border-radius: 0 100% 0 100%;
             transform: rotate(45deg);
             box-shadow: 0 1px 4px rgba(27, 169, 76, 0.2);
         }
 
+        .brand-text {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+        }
+
         .brand-text h1 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 700;
             margin: 0;
             color: #1e293b;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .brand-text .orange-text {
@@ -135,10 +151,13 @@
         }
 
         .brand-text .tagline {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             color: #64748b;
             font-weight: 400;
             margin-top: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         /* Mobile Menu Button */
@@ -150,17 +169,20 @@
             color: #333;
             cursor: pointer;
             padding: 8px;
+            flex-shrink: 0;
         }
 
-        /* Mobile-First Navigation */
+        /* Mobile-First Navigation - Fixed */
         .nav {
             background: rgba(248, 250, 252, 0.98);
             backdrop-filter: blur(10px);
             padding: 8px 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
-            top: 68px;
+            top: 65px;
             z-index: 99;
+            width: 100%;
+            overflow: hidden;
         }
 
         .nav-links {
@@ -173,22 +195,27 @@
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
             -ms-overflow-style: none;
+            width: 100%;
         }
 
         .nav-links::-webkit-scrollbar {
             display: none;
         }
 
+        .nav-links li {
+            flex-shrink: 0;
+        }
+
         .nav-links a {
             text-decoration: none;
             color: #1e293b;
             font-weight: 500;
-            padding: 8px 16px;
+            padding: 8px 14px;
             border-radius: 20px;
             transition: all 0.3s ease;
             white-space: nowrap;
-            font-size: 0.9rem;
-            min-width: fit-content;
+            font-size: 0.85rem;
+            display: block;
         }
 
         .nav-links a:hover,
@@ -197,26 +224,32 @@
             color: white;
         }
 
-        /* Mobile-optimized Hero */
+        /* Mobile-optimized Hero - Fixed text overflow */
         .hero {
             background: linear-gradient(135deg, #e8f5e8 0%, #f0f8ff 100%);
-            padding: 2.5rem 0;
+            padding: 2rem 0;
             text-align: center;
+            width: 100%;
+            overflow: hidden;
         }
 
         .hero h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #00A859;
             margin-bottom: 1rem;
             font-weight: 700;
             line-height: 1.3;
+            padding: 0 10px;
+            word-wrap: break-word;
         }
 
         .hero p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #64748b;
             margin-bottom: 2rem;
             line-height: 1.5;
+            padding: 0 10px;
+            word-wrap: break-word;
         }
 
         .cta-buttons {
@@ -224,10 +257,11 @@
             flex-direction: column;
             gap: 12px;
             align-items: center;
+            padding: 0 15px;
         }
 
         .btn {
-            padding: 14px 24px;
+            padding: 12px 20px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
@@ -238,12 +272,14 @@
             gap: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             width: 100%;
-            max-width: 280px;
-            font-size: 0.95rem;
+            max-width: 260px;
+            font-size: 0.9rem;
+            text-align: center;
         }
 
         .btn i {
-            font-size: 1.1em;
+            font-size: 1em;
+            flex-shrink: 0;
         }
 
         .btn-primary {
@@ -257,22 +293,37 @@
         }
 
         .btn:hover {
-            transform: translateY(-2px);
+            transform: translateY(-1px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
 
-        /* Mobile-optimized Prescription Upload */
+        /* Mobile-optimized Prescription Upload - Fixed */
         .prescription-hero {
             background: linear-gradient(135deg, #F56A0A, #ff8c42);
             color: white;
-            padding: 2.5rem 0;
+            padding: 2rem 0;
             margin: 1.5rem 0;
             border-radius: 15px;
             text-align: center;
+            width: 100%;
+            overflow: hidden;
         }
 
         .prescription-content {
             max-width: 100%;
+            padding: 0 15px;
+        }
+
+        .prescription-content h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            word-wrap: break-word;
+        }
+
+        .prescription-content p {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            word-wrap: break-word;
         }
 
         .prescription-upload {
@@ -280,8 +331,8 @@
             backdrop-filter: blur(10px);
             border: 2px dashed rgba(255,255,255,0.5);
             border-radius: 12px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
+            padding: 1.2rem;
+            margin: 1.2rem 0;
             cursor: pointer;
             transition: all 0.3s ease;
             touch-action: manipulation;
@@ -294,36 +345,51 @@
         }
 
         .upload-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
             opacity: 0.9;
         }
 
-        /* Mobile-optimized Categories Grid */
+        .prescription-upload h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            word-wrap: break-word;
+        }
+
+        .prescription-upload p {
+            font-size: 0.8rem;
+            word-wrap: break-word;
+        }
+
+        /* Mobile-optimized Categories Grid - Fixed */
         .categories {
-            padding: 3rem 0;
+            padding: 2.5rem 0;
             background: white;
+            width: 100%;
         }
 
         .section-title {
             text-align: center;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             color: #00A859;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-weight: 700;
+            padding: 0 15px;
+            word-wrap: break-word;
         }
 
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
             margin-bottom: 2rem;
+            padding: 0 5px;
         }
 
         .category-card {
             background: white;
             border-radius: 12px;
-            padding: 1.5rem 1rem;
+            padding: 1.2rem 0.8rem;
             text-align: center;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
@@ -332,20 +398,25 @@
             text-decoration: none;
             color: inherit;
             touch-action: manipulation;
+            width: 100%;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .category-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             border-color: #F56A0A;
             text-decoration: none;
             color: inherit;
         }
 
         .category-icon {
-            width: 50px;
-            height: 50px;
-            margin: 0 auto 1rem;
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 0.8rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -353,7 +424,8 @@
             background: linear-gradient(135deg, rgba(245, 106, 10, 0.1), rgba(255, 140, 66, 0.1));
             border: 2px solid #F56A0A;
             color: #F56A0A;
-            font-size: 20px;
+            font-size: 16px;
+            flex-shrink: 0;
         }
 
         .category-card:hover .category-icon {
@@ -364,173 +436,204 @@
 
         .category-card h3 {
             color: #00A859;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             font-weight: 600;
-            font-size: 0.95rem;
-            line-height: 1.3;
+            font-size: 0.85rem;
+            line-height: 1.2;
+            word-wrap: break-word;
+            hyphens: auto;
         }
 
         .category-card p {
             color: #64748b;
-            font-size: 0.8rem;
-            line-height: 1.4;
+            font-size: 0.7rem;
+            line-height: 1.3;
+            word-wrap: break-word;
+            hyphens: auto;
         }
 
-        /* Mobile-optimized Store Locator */
+        /* Mobile-optimized Store Locator - Fixed */
         .store-locator {
-            padding: 3rem 0;
+            padding: 2.5rem 0;
             background: linear-gradient(135deg, #f0f8ff 0%, #e8f5e8 100%);
+            width: 100%;
         }
 
         .stores-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
+            gap: 1.2rem;
         }
 
         .store-card {
             background: white;
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.2rem;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            width: 100%;
         }
 
         .store-header {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
+            gap: 10px;
             margin-bottom: 1rem;
         }
 
         .store-icon {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             background: #00A859;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 16px;
+            font-size: 14px;
             flex-shrink: 0;
+        }
+
+        .store-details {
+            flex: 1;
+            min-width: 0;
         }
 
         .store-details h3 {
             color: #00A859;
-            margin-bottom: 0.3rem;
-            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
+            word-wrap: break-word;
+            line-height: 1.2;
+        }
+
+        .store-details p {
+            color: #F56A0A;
+            font-weight: 600;
+            font-size: 0.8rem;
+            word-wrap: break-word;
         }
 
         .store-info {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .store-info p {
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             color: #64748b;
-            font-size: 0.9rem;
-            line-height: 1.4;
+            font-size: 0.85rem;
+            line-height: 1.3;
+            word-wrap: break-word;
         }
 
         .store-actions {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .btn-small {
-            padding: 10px 16px;
-            font-size: 0.8rem;
-            border-radius: 18px;
+            padding: 8px 12px;
+            font-size: 0.75rem;
+            border-radius: 16px;
             flex: 1;
-            min-width: 120px;
+            min-width: 100px;
+            text-align: center;
         }
 
-        /* Mobile-optimized Service Info */
+        /* Mobile-optimized Service Info - Fixed */
         .service-info {
-            padding: 3rem 0;
+            padding: 2.5rem 0;
             background: linear-gradient(135deg, #00A859 0%, #1BA94C 100%);
             color: white;
+            width: 100%;
         }
 
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.2rem;
         }
 
         .service-card {
             text-align: center;
-            padding: 1.2rem;
+            padding: 1rem;
         }
 
         .service-icon {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background: #F56A0A;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 20px;
+            margin: 0 auto 0.8rem;
+            font-size: 16px;
+            flex-shrink: 0;
         }
 
         .service-card h3 {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+            word-wrap: break-word;
+            line-height: 1.2;
         }
 
         .service-card p {
-            font-size: 0.85rem;
-            line-height: 1.4;
+            font-size: 0.75rem;
+            line-height: 1.3;
+            word-wrap: break-word;
         }
 
-        /* Mobile-optimized Footer */
+        /* Mobile-optimized Footer - Fixed */
         .footer {
             background: #1e293b;
             color: white;
-            padding: 2.5rem 0 1.5rem;
+            padding: 2rem 0 1.2rem;
+            width: 100%;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: 1.2rem;
+            margin-bottom: 1.2rem;
         }
 
         .footer-section h3 {
             color: #F56A0A;
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            word-wrap: break-word;
         }
 
         .footer-section p,
         .footer-section a {
             color: #94a3b8;
             text-decoration: none;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
             display: block;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            word-wrap: break-word;
+            line-height: 1.3;
         }
 
         .footer-section a:hover {
             color: white;
         }
 
-        /* Enhanced Mobile WhatsApp Button */
+        /* Enhanced Mobile WhatsApp Button - Fixed */
         .whatsapp-float {
             position: fixed;
-            width: 55px;
-            height: 55px;
-            bottom: 20px;
-            right: 20px;
+            width: 50px;
+            height: 50px;
+            bottom: 15px;
+            right: 15px;
             background: #25d366;
             color: white;
             border-radius: 50%;
             text-align: center;
-            font-size: 24px;
+            font-size: 20px;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
             z-index: 1000;
             display: flex;
@@ -548,13 +651,13 @@
         }
 
         .whatsapp-float i {
-            font-size: 26px;
+            font-size: 22px;
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-8px); }
-            60% { transform: translateY(-4px); }
+            40% { transform: translateY(-6px); }
+            60% { transform: translateY(-3px); }
         }
 
         /* Tablet Responsive (768px+) */
@@ -571,8 +674,14 @@
                 height: 28px;
             }
             
-            .brand-text h1 { font-size: 1.5rem; }
-            .brand-text .tagline { font-size: 0.8rem; }
+            .brand-text h1 { 
+                font-size: 1.5rem; 
+                white-space: normal;
+            }
+            .brand-text .tagline { 
+                font-size: 0.8rem; 
+                white-space: normal;
+            }
             
             .nav-links {
                 justify-content: center;
@@ -685,26 +794,26 @@
         /* Landscape Phone Optimization */
         @media (max-height: 500px) and (orientation: landscape) {
             .hero {
-                padding: 2rem 0;
+                padding: 1.5rem 0;
             }
             
-            .hero h2 { font-size: 1.6rem; }
-            .hero p { font-size: 0.95rem; }
+            .hero h2 { font-size: 1.4rem; }
+            .hero p { font-size: 0.85rem; }
             
             .prescription-hero {
-                padding: 2rem 0;
+                padding: 1.5rem 0;
             }
             
             .categories {
-                padding: 2.5rem 0;
+                padding: 2rem 0;
             }
             
             .store-locator {
-                padding: 2.5rem 0;
+                padding: 2rem 0;
             }
             
             .service-info {
-                padding: 2.5rem 0;
+                padding: 2rem 0;
             }
         }
 
@@ -735,8 +844,8 @@
             right: 15px;
             top: 50%;
             transform: translateY(-50%);
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             background: #F56A0A;
             border-radius: 50%;
             opacity: 0.6;
@@ -746,6 +855,23 @@
             .nav::after {
                 display: none;
             }
+        }
+
+        /* Additional mobile fixes */
+        .container {
+            overflow-x: hidden;
+        }
+
+        /* Ensure all text fits within screen */
+        h1, h2, h3, h4, h5, h6, p, span, div {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* Fix any potential horizontal scroll */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
         }
     </style>
 </head>
@@ -805,15 +931,15 @@
     <section class="prescription-hero" id="prescription">
         <div class="container">
             <div class="prescription-content">
-                <h2 style="font-size: 1.6rem; margin-bottom: 1rem;">Upload Your Prescription</h2>
-                <p style="font-size: 1rem; margin-bottom: 1.5rem;">Fast, secure, and convenient prescription service</p>
+                <h2>Upload Your Prescription</h2>
+                <p>Fast, secure, and convenient prescription service</p>
                 
                 <div class="prescription-upload" onclick="document.getElementById('prescription-file').click()">
                     <div class="upload-icon">
                         <i class="fas fa-cloud-upload-alt"></i>
                     </div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Click to upload or drag & drop</h3>
-                    <p style="font-size: 0.9rem;">Supported formats: JPG, PNG, PDF (Max 5MB)</p>
+                    <h3>Click to upload or drag & drop</h3>
+                    <p>Supported formats: JPG, PNG, PDF (Max 5MB)</p>
                     <input type="file" id="prescription-file" accept=".jpg,.jpeg,.png,.pdf" multiple>
                 </div>
                 
@@ -823,7 +949,7 @@
                     </a>
                 </div>
                 
-                <p style="margin-top: 1rem; opacity: 0.9; font-size: 0.9rem;">
+                <p style="margin-top: 1rem; opacity: 0.9; font-size: 0.85rem;">
                     <i class="fas fa-user-md"></i> Our licensed pharmacists will review and contact you within 30 minutes
                 </p>
             </div>
@@ -848,82 +974,4 @@
                         <i class="fas fa-ice-cream"></i>
                     </div>
                     <h3>Ice Creams & Frozen Food</h3>
-                    <p>Premium ice creams, frozen meals, cold storage items</p>
-                </a>
-                
-                <a href="products.html?category=baby-care" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-baby"></i>
-                    </div>
-                    <h3>Baby Care</h3>
-                    <p>Diapers, formula, baby food, care essentials</p>
-                </a>
-                
-                <a href="products.html?category=skincare" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <h3>Skin, Hair, Body Care</h3>
-                    <p>Skincare, haircare, cosmetics, personal hygiene</p>
-                </a>
-                
-                <a href="products.html?category=ayurvedic" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Ayurvedic</h3>
-                    <p>Traditional medicines, herbal products, natural remedies</p>
-                </a>
-                
-                <a href="products.html?category=groceries" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-cookie-bite"></i>
-                    </div>
-                    <h3>Groceries - Snacks, Biscuits</h3>
-                    <p>Daily essentials, snacks, beverages, packaged foods</p>
-                </a>
-                
-                <a href="products.html?category=nutrition" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <h3>Nutrition & Supplements</h3>
-                    <p>Vitamins, protein powders, health supplements</p>
-                </a>
-                
-                <a href="products.html?category=pet-supplies" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-paw"></i>
-                    </div>
-                    <h3>Pet Supplies</h3>
-                    <p>Pet medicines, food, care products, accessories</p>
-                </a>
-                
-                <a href="products.html?category=medical-devices" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-stethoscope"></i>
-                    </div>
-                    <h3>Medical Devices & More</h3>
-                    <p>BP monitors, thermometers, first aid, medical equipment</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Store Locator -->
-    <section class="store-locator" id="store-locator">
-        <div class="container">
-            <h2 class="section-title">Our Store Locations</h2>
-            <div class="stores-grid">
-                <div class="store-card">
-                    <div class="store-header">
-                        <div class="store-icon">
-                            <i class="fas fa-store"></i>
-                        </div>
-                        <div class="store-details">
-                            <h3>Orange Chemist - Sai Spring</h3>
-                            <p style="color: #F56A0A; font-weight: 600; font-size: 0.85rem;">Main Store</p>
-                        </div>
-                    </div>
-                    <div class="store-info">
-                        <p><i class="fas fa-map-
+                    <p>Premium
