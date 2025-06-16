@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,60 +18,53 @@
             color: #333;
             background: #f8fafc;
             overflow-x: hidden;
-            width: 100%;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
-            width: 100%;
         }
 
-        /* Mobile-First Header - Fixed */
+        /* Mobile-First Header */
         .header {
             background: white;
             color: #333;
-            padding: 10px 0;
+            padding: 12px 0;
             position: sticky;
             top: 0;
             z-index: 100;
             box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-            width: 100%;
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
         }
 
-        /* Mobile-optimized Logo - Fixed sizing */
+        /* Mobile-optimized Logo */
         .logo {
             display: flex;
             align-items: center;
-            gap: 8px;
-            flex: 1;
-            min-width: 0; /* Allows flex item to shrink */
+            gap: 10px;
         }
 
         .cross-container {
             position: relative;
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
             background: #00A859;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 15px rgba(0, 168, 89, 0.25);
-            flex-shrink: 0;
         }
 
         .medical-cross {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             position: relative;
         }
 
@@ -85,16 +77,16 @@
         }
 
         .medical-cross::before {
-            width: 4px;
-            height: 20px;
+            width: 5px;
+            height: 24px;
             left: 50%;
             top: 0;
             transform: translateX(-50%);
         }
 
         .medical-cross::after {
-            width: 20px;
-            height: 4px;
+            width: 24px;
+            height: 5px;
             top: 50%;
             left: 0;
             transform: translateY(-50%);
@@ -102,17 +94,17 @@
 
         .orange-accent {
             position: absolute;
-            top: -3px;
-            right: -3px;
-            width: 14px;
-            height: 14px;
+            top: -4px;
+            right: -4px;
+            width: 16px;
+            height: 16px;
             background: #F56A0A;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 8px;
+            font-size: 9px;
             color: white;
             box-shadow: 0 2px 8px rgba(245, 106, 10, 0.3);
             border: 2px solid white;
@@ -120,30 +112,21 @@
 
         .leaf-element {
             position: absolute;
-            top: -2px;
-            right: 5px;
-            width: 4px;
-            height: 6px;
+            top: -3px;
+            right: 6px;
+            width: 5px;
+            height: 8px;
             background: #1BA94C;
             border-radius: 0 100% 0 100%;
             transform: rotate(45deg);
             box-shadow: 0 1px 4px rgba(27, 169, 76, 0.2);
         }
 
-        .brand-text {
-            flex: 1;
-            min-width: 0;
-            overflow: hidden;
-        }
-
         .brand-text h1 {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: 700;
             margin: 0;
             color: #1e293b;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         .brand-text .orange-text {
@@ -151,13 +134,10 @@
         }
 
         .brand-text .tagline {
-            font-size: 0.65rem;
+            font-size: 0.75rem;
             color: #64748b;
             font-weight: 400;
             margin-top: 1px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         /* Mobile Menu Button */
@@ -622,6 +602,45 @@
             color: white;
         }
 
+                /* Floating WhatsApp - Updated to right side with bounce animation */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            animation: bounce 2s infinite;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
         /* Enhanced Mobile WhatsApp Button - Fixed */
         .whatsapp-float {
             position: fixed;
@@ -956,7 +975,7 @@
         </div>
     </section>
 
-    <!-- Product Categories -->
+   <!-- Product Categories -->
     <section class="categories" id="categories">
         <div class="container">
             <h2 class="section-title">Our Product Categories</h2>
@@ -974,4 +993,197 @@
                         <i class="fas fa-ice-cream"></i>
                     </div>
                     <h3>Ice Creams & Frozen Food</h3>
-                    <p>Premium
+                    <p>Premium ice creams, frozen meals, cold storage items</p>
+                </a>
+                
+                <a href="products.html?category=baby-care" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Baby Care</h3>
+                    <p>Diapers, formula, baby food, care essentials</p>
+                </a>
+                
+                <a href="products.html?category=skincare" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Skin, Hair, Body Care</h3>
+                    <p>Skincare, haircare, cosmetics, personal hygiene</p>
+                </a>
+                
+                <a href="products.html?category=ayurvedic" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Ayurvedic</h3>
+                    <p>Traditional medicines, herbal products, natural remedies</p>
+                </a>
+                
+                <a href="products.html?category=groceries" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cookie-bite"></i>
+                    </div>
+                    <h3>Groceries - Snacks, Biscuits</h3>
+                    <p>Daily essentials, snacks, beverages, packaged foods</p>
+                </a>
+                
+                <a href="products.html?category=nutrition" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Nutrition & Supplements</h3>
+                    <p>Vitamins, protein powders, health supplements</p>
+                </a>
+                
+                <a href="products.html?category=pet-supplies" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <h3>Pet Supplies</h3>
+                    <p>Pet medicines, food, care products, accessories</p>
+                </a>
+                
+                <a href="products.html?category=medical-devices" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Medical Devices & More</h3>
+                    <p>BP monitors, thermometers, first aid, medical equipment</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+  <!-- Store Locator -->
+    <section class="store-locator" id="store-locator">
+        <div class="container">
+            <h2 class="section-title">Our Store Locations</h2>
+            <div class="stores-grid">
+                <div class="store-card">
+                    <div class="store-header">
+                        <div class="store-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="store-details">
+                            <h3>Orange Chemist - Sai Spring</h3>
+                            <p style="color: #F56A0A; font-weight: 600;">Main Store</p>
+                        </div>
+                    </div>
+                    <div class="store-info">
+                        <p><i class="fas fa-map-marker-alt" style="color: #F56A0A; width: 16px;"></i> 35G Sai Spring Apartment, 2&3, Utsav Chowk - CISF Rd, Kharghar, Navi Mumbai, Maharashtra 410210</p>
+                        <p><i class="fas fa-clock" style="color: #F56A0A; width: 16px;"></i> Daily: 8:00 AM - 11:00 PM</p>
+                        <p><i class="fas fa-truck" style="color: #F56A0A; width: 16px;"></i> Delivery: 10:00 AM - 10:00 PM</p>
+                    </div>
+                    <div class="store-actions">
+                        <a href="https://g.co/kgs/vfRQ3s9" target="_blank" class="btn btn-primary btn-small">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                        <a href="https://wa.me/919820796184?text=Hi! I want to visit your Sai Spring store" class="btn btn-secondary btn-small">
+                            <i class="fab fa-whatsapp"></i> Contact Store
+                        </a>
+                    </div>
+                </div>
+
+                <div class="store-card">
+                    <div class="store-header">
+                        <div class="store-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="store-details">
+                            <h3>Orange Chemist - Greenwoods</h3>
+                            <p style="color: #F56A0A; font-weight: 600;">Metro Station Store</p>
+                        </div>
+                    </div>
+                    <div class="store-info">
+                        <p><i class="fas fa-map-marker-alt" style="color: #F56A0A; width: 16px;"></i> Shop No 25/26 Greenwoods CHS Plot 9,13,13A,13B, Metro Road, near Pethpada Metro Station, Sector 35E, Kharghar, Navi Mumbai, Maharashtra 410210</p>
+                        <p><i class="fas fa-clock" style="color: #F56A0A; width: 16px;"></i> Daily: 8:00 AM - 11:00 PM</p>
+                        <p><i class="fas fa-train" style="color: #F56A0A; width: 16px;"></i> Near Pethpada Metro Station</p>
+                    </div>
+                    <div class="store-actions">
+                        <a href="https://g.co/kgs/tneNGyd" target="_blank" class="btn btn-primary btn-small">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                        <a href="https://wa.me/919820796184?text=Hi! I want to visit your Greenwoods store" class="btn btn-secondary btn-small">
+                            <i class="fab fa-whatsapp"></i> Contact Store
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Information -->
+    <section class="service-info">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Why Choose Orange Chemist?</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Free Home Delivery</h3>
+                    <p>Free delivery on orders above ₹100 in Kharghar<br>Delivery Time: 10 AM - 10 PM</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Extended Hours</h3>
+                    <p>Open Daily: 8:00 AM - 11:00 PM<br>Monday to Sunday<br>Consistent service</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Licensed & Trusted</h3>
+                    <p>Certified pharmacists<br>100% genuine products<br>Quality guaranteed</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Easy Ordering</h3>
+                    <p>WhatsApp ordering<br>Prescription upload<br>Quick delivery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Orange Chemist</h3>
+                    <p>Your trusted neighborhood pharmacy in Kharghar, Navi Mumbai. From healthcare essentials to daily needs, we're here to serve you with quality and care.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#categories">Browse Products</a>
+                    <a href="#prescription">Upload Prescription</a>
+                    <a href="#store-locator">Store Locations</a>
+                    <a href="https://wa.me/919820796184">WhatsApp Order</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fab fa-whatsapp"></i> +91 98207 96184</p>
+                    <p><i class="fas fa-envelope"></i> info@orangechemist.com</p>
+                    <p><i class="fas fa-clock"></i> Daily: 8:00 AM - 11:00 PM</p>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid #475569;">
+                <p>&copy; 2024 Orange Chemist. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button - Right Side with Bounce -->
+    <a href="https://wa.me/919820796184?text=Hi! I'd like to place an order" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Prescription file upload handling
+        document.getElementById('prescription-file').addEventListener('change', function(e) {
+            const files = e.
